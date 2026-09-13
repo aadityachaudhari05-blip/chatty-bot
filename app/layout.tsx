@@ -13,8 +13,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chatty Bot",
-  description: "Chatty Bot - Your AI assistant",
+  title: "Chatty Bot - Your AI Assistant",
+  description:
+    "Chatty Bot is a fast and friendly AI assistant for answering questions, explaining ideas, and helping with everyday tasks.",
+  keywords: [
+    "Chatty Bot",
+    "AI assistant",
+    "AI chatbot",
+    "chatbot",
+    "artificial intelligence",
+    "AI helper",
+  ],
+  authors: [{ name: "Aaditya Chaudhari" }],
+  creator: "Aaditya Chaudhari",
+  applicationName: "Chatty Bot",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Chatty Bot - Your AI Assistant",
+    description:
+      "Chatty Bot is a fast and friendly AI assistant for answering questions and helping with everyday tasks.",
+    type: "website",
+    siteName: "Chatty Bot",
+  },
+  twitter: {
+    card: "summary",
+    title: "Chatty Bot - Your AI Assistant",
+    description:
+      "Chat with Chatty Bot, your friendly AI assistant.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
