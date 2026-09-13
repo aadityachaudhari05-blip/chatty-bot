@@ -1,0 +1,124 @@
+cat > app/page.tsx <<'EOF'
+"use client";
+
+import { useState } from "react";
+
+export default function Home() {
+  const [message, setMessage] = useState("");
+
+  return (
+    <main className="flex min-h-screen bg-[#212121] text-white">
+
+      <aside className="hidden w-64 flex-col border-r border-gray-700 bg-[#171717] p-3 md:flex">
+
+        <button className="mb-6 rounded-lg border border-gray-600 px-4 py-3 text-left hover:bg-gray-800">
+          ＋ New chat
+        </button>
+
+        <p className="px-3 text-xs text-gray-500">
+          CHAT HISTORY
+        </p>
+
+        <div className="mt-3 rounded-lg px-3 py-3 text-sm hover:bg-gray-800">
+          Welcome to Chatty Bot
+        </div>
+
+        <div className="mt-auto">
+          <button className="w-full rounded-lg px-3 py-3 text-left hover:bg-gray-800">
+            ⚙ Settings
+          </button>
+        </div>
+
+      </aside>
+
+      <section className="flex flex-1 flex-col">
+
+        <header className="flex items-center justify-between border-b border-gray-700 px-5 py-4">
+          <h1 className="text-xl font-semibold">
+            Chatty Bot
+          </h1>
+
+          <button className="rounded-lg px-3 py-2 hover:bg-gray-800">
+            Pro 🚀
+          </button>
+        </header>
+
+        <div className="flex flex-1 items-center justify-center px-6">
+
+          <div className="w-full max-w-2xl text-center">
+
+            <div className="mb-6 text-5xl">
+              🤖
+            </div>
+
+            <h2 className="text-4xl font-bold">
+              How can I help you?
+            </h2>
+
+            <p className="mt-3 text-gray-400">
+              Welcome to Chatty Bot.
+            </p>
+
+            <div className="mt-10 grid gap-3 sm:grid-cols-2">
+
+              <button className="rounded-xl border border-gray-700 p-4 text-left hover:bg-gray-800">
+                🧮 Solve a problem
+              </button>
+
+              <button className="rounded-xl border border-gray-700 p-4 text-left hover:bg-gray-800">
+                💻 Help me code
+              </button>
+
+              <button className="rounded-xl border border-gray-700 p-4 text-left hover:bg-gray-800">
+                🖼️ Analyze an image
+              </button>
+
+              <button className="rounded-xl border border-gray-700 p-4 text-left hover:bg-gray-800">
+                🌐 Search the web
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="w-full px-4 pb-6">
+
+          <div className="mx-auto flex max-w-3xl items-center rounded-2xl border border-gray-600 bg-[#2f2f2f] px-3 py-2 shadow-lg">
+
+            <button className="rounded-lg p-3 text-xl hover:bg-gray-700">
+              📎
+            </button>
+
+            <input
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Message Chatty Bot..."
+              className="flex-1 bg-transparent px-3 py-3 text-white outline-none placeholder:text-gray-500"
+            />
+
+            <button
+              onClick={() => {
+                console.log("Message:", message);
+                setMessage("");
+              }}
+              className="rounded-xl bg-white px-4 py-3 font-bold text-black hover:bg-gray-200"
+            >
+              ↑
+            </button>
+
+          </div>
+
+          <p className="mt-2 text-center text-xs text-gray-500">
+            Chatty Bot can make mistakes. Check important information.
+          </p>
+
+        </div>
+
+      </section>
+
+    </main>
+  );
+}
+EOF
